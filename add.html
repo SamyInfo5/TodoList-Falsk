@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% block content %}
+        <h1>{% block title %} Ajouter une tache {% endblock %}</h1>
+        <form method="post">
+            <label for="title" >ajouter une tache</label>
+            <br>
+            <input type="text" name="title" placeholder="La tache" value="{{ request.form['title'] }}"></input>
+            <br>
+
+            <label for="content">Contenu</label>
+            <br>
+            <textarea name="content" placeholder="Message content" rows="10" cols="10">{{ request.form['content'] }}</textarea>
+            <br>
+
+            <label for="Catégory">Ajouter une Catégory</label>
+            <br>
+            <input type="text" name="category" placeholder="catégory" value="{{ request.form['title'] }}"></input>
+            <br>
+
+            <button type="submit"><a href="http://127.0.0.1:5000"></a>Ajouter</button>
+        </form>
+    {% endblock %}
+</body>
+</html>
