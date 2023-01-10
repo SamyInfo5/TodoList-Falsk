@@ -9,25 +9,25 @@
 <body>
     {% block content %}
 
-    <form action="">
+    <form action="/edit/{{ onedata.id }}" method="post">
         <label for="title" >Modifier une tache</label>
             <br>
-            <input type="text" name="title" placeholder="{{ onedata.title }}" value="{{ request.form['title'] }}"></input>
+            <input type="text" name="title" placeholder="Votre titre " value="{{ onedata.title }}">
             <br>
 
             <label for="content">Contenu</label>
             <br>
-            <textarea name="content" placeholder="{{ onedata.content }}" rows="10" cols="10">{{ request.form['content'] }}</textarea>
+            <textarea name="content" placeholder="Le contenue de la tâche " rows="10" cols="10" >{{ onedata.content }}</textarea>
             <br>
 
-            <label for="Catégory">Ajouter une Catégory</label>
+            <label for="Catégory">Catégory</label>
             <br>
-            <input type="text" name="category" placeholder="{{ onedata.category }}" value="{{ request.form['category'] }}"></input>
+            <input type="text" name="category" placeholder="Catégory" value="{{ onedata.category }}">
             <br>
 
-            {{ onedata.edit_date }}
+            {{ date_time  }}
     
-            <button type="submit"><a href="http://127.0.0.1:5000">Modifier</a></button>
+            <button type="submit">Modifier</button>
      </form>
     {% endblock %}
 </body>

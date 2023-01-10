@@ -22,11 +22,9 @@
     <br>
 
             {% for i in data%}
-
+    <div class="container">
         <table class="table table-dark table-striped">
             
-                
-
             <tr>
 
                 <td>  {{ i.title }} </td>
@@ -34,17 +32,18 @@
                 <td>  {{ i.category }} </td>
                 <td>  {{ date_time }} </td>
                 <td>  {{ i.edit_date }} </td>
-                    
+
                 <td>
 
-                <button type="submit"><a href="http://127.0.0.1:5000/edit/{{i.id}}">Modifier</a></button>
-                <input type="submit" value="Supprimer">
+                <button><a href="http://127.0.0.1:5000/edit/{{i.id}}">Modifier</a></button>
+                <button><a href="http://127.0.0.1:5000/delete/{{i.id}}">Supprimer</a></button>
+
 
                 </td> 
             </tr> 
             
         </table>
-
+    </div>    
 
             {% endfor %}
 
